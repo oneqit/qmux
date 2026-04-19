@@ -86,22 +86,24 @@ impl App {
         let layout = self.current_layout();
         let target = self.window_id.clone();
         let _ = crate::tmux::ensure_controller_first(self.tmux.as_ref(), &target);
-        if let Err(e) = crate::tmux::select_layout(self.tmux.as_ref(), &target, layout) {
-            self.status = Some(format!("layout error: {}", e));
-        } else {
-            self.status = Some(format!("layout: {}", layout));
-        }
+        let layout_result = crate::tmux::select_layout(self.tmux.as_ref(), &target, layout);
+        self.refresh();
+        self.status = Some(match layout_result {
+            Ok(_) => format!("layout: {}", layout),
+            Err(e) => format!("layout error: {}", e),
+        });
     }
 
     pub fn apply_current_layout(&mut self) {
         let layout = self.current_layout();
         let target = self.window_id.clone();
         let _ = crate::tmux::ensure_controller_first(self.tmux.as_ref(), &target);
-        if let Err(e) = crate::tmux::select_layout(self.tmux.as_ref(), &target, layout) {
-            self.status = Some(format!("layout error: {}", e));
-        } else {
-            self.status = Some(format!("layout: {}", layout));
-        }
+        let layout_result = crate::tmux::select_layout(self.tmux.as_ref(), &target, layout);
+        self.refresh();
+        self.status = Some(match layout_result {
+            Ok(_) => format!("layout: {}", layout),
+            Err(e) => format!("layout error: {}", e),
+        });
     }
 
     pub fn cursor_down(&mut self) {
@@ -269,7 +271,8 @@ mod layout_tests {
         let m = MockTmux::new()
             .with_ok(CTRL_NOT_FIRST) // list-panes (from ensure_controller_first)
             .with_ok("") // swap-pane
-            .with_ok(""); // select-layout
+            .with_ok("") // select-layout
+            .with_ok(CTRL_NOT_FIRST); // list-panes (from refresh)
         let handle = m.calls_handle();
         let mut app = App::new(Box::new(m), "@1".into());
         app.apply_current_layout();
@@ -289,7 +292,8 @@ mod layout_tests {
         let m = MockTmux::new()
             .with_ok(CTRL_NOT_FIRST)
             .with_ok("")
-            .with_ok("");
+            .with_ok("")
+            .with_ok(CTRL_NOT_FIRST); // list-panes (from refresh)
         let handle = m.calls_handle();
         let mut app = App::new(Box::new(m), "@1".into());
         app.cycle_layout();
