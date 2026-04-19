@@ -281,7 +281,7 @@ mod layout_tests {
             "swap-pane must happen before select-layout"
         );
         let swap = &calls[swap_idx];
-        assert_eq!(swap, &vec!["swap-pane", "-d", "-s", "%0", "-t", "@1.0"]);
+        assert_eq!(swap, &vec!["swap-pane", "-d", "-s", "%0", "-t", "%1"]);
     }
 
     #[test]

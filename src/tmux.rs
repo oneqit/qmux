@@ -237,11 +237,13 @@ pub fn ensure_controller_first(tmux: &dyn TmuxRunner, window: &str) -> Result<()
     let Some(controller) = panes.iter().find(|p| p.role == "controller") else {
         return Ok(());
     };
-    if panes.first().map(|p| p.pane_id.as_str()) == Some(controller.pane_id.as_str()) {
+    let Some(first) = panes.first() else {
+        return Ok(());
+    };
+    if first.pane_id == controller.pane_id {
         return Ok(());
     }
-    let target = format!("{}.0", window);
-    swap_pane(tmux, &controller.pane_id, &target)
+    swap_pane(tmux, &controller.pane_id, &first.pane_id)
 }
 
 pub fn select_pane(tmux: &dyn TmuxRunner, pane: &str) -> Result<()> {
@@ -531,7 +533,7 @@ mod tests {
         let calls = m.calls.borrow();
         assert_eq!(calls.len(), 2, "expected list-panes + swap-pane");
         assert_eq!(calls[0][0], "list-panes");
-        assert_eq!(calls[1], vec!["swap-pane", "-d", "-s", "%0", "-t", "@1.0"]);
+        assert_eq!(calls[1], vec!["swap-pane", "-d", "-s", "%0", "-t", "%1"]);
     }
 
     #[test]
