@@ -1,0 +1,30 @@
+[package]
+name = "qmux"
+version = "0.1.0"
+edition = "2021"
+description = "tmux-based CLI AI agent orchestrator"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/oneqit/qmux"
+homepage = "https://github.com/oneqit/qmux"
+keywords = ["tmux", "ai", "agent", "cli", "orchestrator"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+ratatui = "0.29"
+crossterm = "0.28"
+serde = { version = "1", features = ["derive"] }
+serde_yaml = "0.9"
+anyhow = "1"
+which = "7"
+dirs = "5"
+tui-textarea = "0.7.0"
+unicode-width = "=0.2.0"
+
+[lib]
+name = "qmux"
+path = "src/lib.rs"
+
+[profile.release]
+lto = true
+strip = true

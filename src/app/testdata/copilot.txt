@@ -1,0 +1,40 @@
+╭──────────────────────────────────────────────────╮
+│                      ╭─╮╭─╮                      │
+│                      ╰─╯╰─╯                      │
+│                      █ ▘▝ █                      │
+│                       ▔▔▔▔                       │
+│              GitHub Copilot v1.0.32              │
+│       Copilot uses AI. Check for mistakes.       │
+│                                                  │
+╰──────────────────────────────────────────────────╯
+
+● 💡 No copilot instructions found. Run /init to
+  generate a copilot-instructions.md file for this
+  project.
+
+● Environment loaded: 1 MCP server, 7 skills
+
+❯ 동작 테스트
+
+● 정상 동작 중입니다. 메시지 잘 받았습니다.
+
+❯ python 10줄짜리 샘플 스크립트 출력해줘
+
+●  import random
+   
+   def main():
+       nums = [random.randint(1, 100) for _ in 
+  range(5)]
+       print("numbers:", nums)
+       print("max:", max(nums))
+       print("min:", min(nums))
+       print("avg:", sum(nums) / len(nums))
+   
+   main()
+
+ ~/code/oneqit/qmux [⎇ main]
+────────────────────────────────────────────────────
+❯ 
+────────────────────────────────────────────────────
+ / commands · ? help           GPT-5.3-Codex · (7%)
+

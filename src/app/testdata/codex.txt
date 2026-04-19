@@ -1,0 +1,109 @@
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+ > /quit                                                                                                
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+╭──────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                      │
+│  Agent powering down. Goodbye!                                                                       │
+│                                                                                                      │
+│  Interaction Summary                                                                                 │
+│  Session ID:                 98716ae6-fb3b-4396-8fc3-6f79da47b0ef                                    │
+│  Tool Calls:                 0 ( ✓ 0 x 0 )                                                           │
+│  Success Rate:               0.0%                                                                    │
+│                                                                                                      │
+│  Performance                                                                                         │
+│  Wall Time:                  1m 51s                                                                  │
+│  Agent Active:               9.5s                                                                    │
+│    » API Time:               9.5s (100.0%)                                                           │
+│    » Tool Time:              0s (0.0%)                                                               │
+│                                                                                                      │
+│                                                                                                      │
+│  Model Usage                                                                                         │
+│  Use /model to view model quota information                                                          │
+│                                                                                                      │
+│  Model                           Reqs  Input Tokens   Cache Reads Output Tokens                      │
+│  ──────────────────────────────────────────────────────────────────────────────────────────────────  │
+│  gemini-3-flash-preview             2        14,062         5,567           123                      │
+│    ↳ main                           2        14,062         5,567           123                      │
+│  To resume this session: gemini --resume 98716ae6-fb3b-4396-8fc3-6f79da47b0ef                        │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+[16:05:56] ~/code/oneqit/qmux  main [⇡] 🦀 v1.94.0  1m55s 
+❯ codex
+╭────────────────────────────────────────────────────╮
+│ >_ OpenAI Codex (v0.121.0)                         │
+│                                                    │
+│ model:     gpt-5.3-codex medium   /model to change │
+│ directory: ~/code/oneqit/qmux                      │
+╰────────────────────────────────────────────────────╯
+
+  Tip: New Use /fast to enable our fastest inference at 2X plan usage.
+
+⚠ Heads up, you have less than 25% of your weekly limit left. Run /status for a breakdown.
+
+› codex 응답 테스트
+
+• 테스트 응답 정상입니다. 필요한 작업을 말씀해 주세요.
+
+› python으로 원주율 계산하는 가장 짧은 스크립트 출력해줘
+
+⚠ Heads up, you have less than 5% of your weekly limit left. Run /status for a breakdown.
+
+• import math;print(math.pi)
+
+› python 스크립트 예제 5줄짜리 아무거나 출력해줘
+
+• name = "Codex"
+  for i in range(1, 4):
+      print(f"{i}: Hello, {name}!")
+  total = sum(range(1, 11))
+  print("sum =", total)
+Token usage: total=2,635 input=2,458 (+ 32,512 cached) output=177 (reasoning 90)
+To continue this session, run codex resume 019d9f69-19f8-7570-8d7b-a70795ef2514
+
+[16:13:59] ~/code/oneqit/qmux  main [⇡] 🦀 v1.94.0  8m2s 
+❯ 
+
+[16:14:00] ~/code/oneqit/qmux  main [⇡] 🦀 v1.94.0 
+❯ codex
+╭────────────────────────────────────────────────────╮
+│ >_ OpenAI Codex (v0.121.0)                         │
+│                                                    │
+│ model:     gpt-5.3-codex medium   /model to change │
+│ directory: ~/code/oneqit/qmux                      │
+╰────────────────────────────────────────────────────╯
+
+  Tip: Run /review to get a code review of your current changes.
+
+⚠ Heads up, you have less than 5% of your weekly limit left. Run /status for a breakdown.
+
+╭────────────────────────────────────────────────────╮
+│ >_ OpenAI Codex (v0.121.0)                         │
+│                                                    │
+│ model:     gpt-5.3-codex medium   /model to change │
+│ directory: ~/code/oneqit/qmux                      │
+╰────────────────────────────────────────────────────╯
+
+  Tip: New For a limited time, Codex is included in your plan for free – let’s build together.
+
+› codex 응답 테스트
+
+• 테스트 응답 정상입니다. 필요한 작업을 말씀해 주세요.
+
+› python으로 원주율 계산하는 가장 짧은 스크립트 출력해줘
+
+• import math;print(math.pi)
+
+› python 스크립트 예제 5줄짜리 아무거나 출력해줘
+
+• name = "Codex"
+  for i in range(1, 4):
+      print(f"{i}: Hello, {name}!")
+  total = sum(range(1, 11))
+  print("sum =", total)
+
+To continue this session, run codex resume 019d9f70-7d5f-7412-8729-0b8e081932bc
+
+› Explain this codebase
+ 
+  gpt-5.3-codex medium · ~/code/oneqit/qmux
